@@ -13,8 +13,10 @@ public with sharing class RedditContentRetrieverTest{
         String contentType = res.getHeader('Content-Type');
         System.assert(contentType == 'application/json');
         String actualValue = res.getBody();
-        String expectedValue = '{"data":{"children":{"name":"test", "author":"test", "url":"test.com", "self_text":"test self text"}}}';
+        String expectedValue = '{"data":{"children":[{"name":"test", "author":"test", "url":"test.com", "self_text":"test self text"}]}}';
         System.assertEquals(actualValue, expectedValue);
         System.assertEquals(200, res.getStatusCode());
+
+        RedditContentRetriever.parseRedditData();
     }
 }

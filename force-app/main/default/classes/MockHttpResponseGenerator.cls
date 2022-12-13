@@ -10,7 +10,7 @@ global class MockHttpResponseGenerator implements HttpCalloutMock {
         // Create a fake response
         HttpResponse res = new HttpResponse();
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{"data":{"children":{"name":"test", "author":"test", "url":"test.com", "self_text":"test self text"}}}');
+        res.setBody('{"data":{"children":[{"name":"test", "author":"test", "url":"test.com", "self_text":"test self text"}]}}');
         res.setStatusCode(200);
         return res;
     }
