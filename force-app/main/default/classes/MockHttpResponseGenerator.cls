@@ -2,8 +2,7 @@
 global class MockHttpResponseGenerator implements HttpCalloutMock {
     // Implement this interface method
     global HTTPResponse respond(HTTPRequest req) {
-        // Optionally, only send a mock response for a specific endpoint
-        // and method.
+
         System.assertEquals('callout:Reddit', req.getEndpoint());
         System.assertEquals('GET', req.getMethod());
         
