@@ -14,29 +14,12 @@ public class RedditJSONParser {
 	}
 
 	public class Data {
-        @AuraEnabled
-		public String title;
-
-        @AuraEnabled
-		public Integer downs;
 
         @AuraEnabled
 		public String name;
 
         @AuraEnabled
-		public Integer ups;
-
-        @AuraEnabled
-		public Integer score;
-
-        @AuraEnabled
-		public Object likes;
-
-        @AuraEnabled
 		public String author;
-
-        @AuraEnabled
-		public Integer num_comments;
 
         @AuraEnabled
 		public String url;
