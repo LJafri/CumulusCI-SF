@@ -3,13 +3,17 @@ public with sharing class RedditContentRetriever {
      
     public static HttpResponse getRedditData() {
         Http httpCallout = new Http();
-        HttpRequest req = new HttpRequest();
-        req.setEndpoint('callout:Reddit');
-        req.setMethod('GET');
+        HttpRequest request = new HttpRequest();
+        request.setEndpoint('callout:Reddit');
+        request.setMethod('GET');
 
-        HttpResponse res = httpCallout.send(req);
-        return res;
-        
+        HttpResponse response = httpCallout.send(request);
+        if(response.getStatusCode() >= 200 && response.getStatusCode() < 300) {
+            return response;
+        }
+        throw new CalloutException(
+            'Callout failed with status code ' + response.getStatusCode() + ' Status message:' + response.getStatus()
+        );
     }
 
     public static List<RedditJSONParser.Data> parseRedditData() {
