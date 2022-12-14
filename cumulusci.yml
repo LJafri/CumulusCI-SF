@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.70.0'
+project:
+    name: Salesforce-Reddit-Integration
+    package:
+        name: salesforce-reddit-integration
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Salesforce-Reddit-Integration/tests
+            options:
+                outputdir: robot/Salesforce-Reddit-Integration/results
+
+    robot_testdoc:
+        options:
+            path: robot/Salesforce-Reddit-Integration/tests
+            output: robot/Salesforce-Reddit-Integration/doc/Salesforce-Reddit-Integration_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
