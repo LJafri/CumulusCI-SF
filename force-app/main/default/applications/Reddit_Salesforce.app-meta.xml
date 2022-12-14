@@ -11,6 +11,7 @@
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Reddit Salesforce</label>
     <navType>Standard</navType>
+    <tabs>standard-Account</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Reddit_Salesforce_UtilityBar</utilityBar>
 </CustomApplication>
