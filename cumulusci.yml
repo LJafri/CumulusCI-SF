@@ -6,9 +6,15 @@ project:
         api_version: '55.0'
     git:
         default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta'
+        prefix_release: 'release/'
     source_format: sfdx
 
 tasks:
+    github_automerge_feature:
+    options:
+        update_future_releases: True
     robot:
         options:
             suites: robot/Salesforce-Reddit-Integration/tests
